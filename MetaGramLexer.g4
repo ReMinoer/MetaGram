@@ -14,7 +14,7 @@ META_TARGET_BEGIN: VOID? '<' VOID?;
 META_TARGET_END: VOID? '>' VOID?;
 META_HEADER: ('@header' | '@members') VOID?;
 META_CODE: '{' (META_CODE | ~[{}])* '}';
-META_PARAMS: '[' (META_PARAMS | ~[\[\]])* ']';
+META_PARAMS: '[' (META_PARAMS | ~('['|']'))* ']';
 META_END: VOID? '*/' WS? -> popMode;
 
 mode Comment;
