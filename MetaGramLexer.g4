@@ -2,6 +2,8 @@ lexer grammar MetaGramLexer;
 
 META_BEGIN: '/*' VOID? '<' -> pushMode(Meta);
 COMMENT_BEGIN: '/*' VOID? -> more, pushMode(Comment);
+GRAMMAR_ASTERISK: '*';
+GRAMMAR_SLASH: '/';
 GRAMMAR: ~[*/]+;
 
 fragment WS: (' ' | '\t')+;

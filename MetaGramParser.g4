@@ -3,7 +3,7 @@ parser grammar MetaGramParser;
 options { tokenVocab=MetaGramLexer; }
 
 parse: (antlrGrammar | metaCode)* EOF;
-antlrGrammar: (GRAMMAR | COMMENT)+;
+antlrGrammar: (GRAMMAR | COMMENT | GRAMMAR_ASTERISK | GRAMMAR_SLASH)+;
 metaCode: defaultCode otherCode;
 
 defaultCode: META_BEGIN (metaTarget (META_SEPARATOR metaTarget)*)? META_TARGET_END META_END defaultCodeContent?;
